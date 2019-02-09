@@ -1,8 +1,10 @@
 # Credits node
 
+_NOTE: THIS IMAGE USE TEST-NET v4.1_
+
 ## Setting up account
 
-To attach your existing account to node you need to create pair of two files:
+To attach your existing account to node you need to create pair of files:
 
 - ~/.credits/NodePublic.txt - your public key
 - ~/.credits/NodePrivate.txt - your private key
@@ -20,13 +22,13 @@ docker restart csnode
 ```
 version: "3"
 services:
-  csnode:
-    image: credits-node
+  credits:
+    image: dimitrykislichenko/credits
     ports:
       - "6000:6000"
       - "9090:9090"
       - "9080:9080"
-    container_name: "csnode"
+    container_name: "credits"
     volumes:
       - "~/.credits/db:/opt/node/test_db"
       - "~/.credits/NodePublic.txt:/opt/node/NodePublic.txt"
@@ -36,12 +38,13 @@ services:
 ### Usign CLI
 
 ```
-docker run credits-node \
-    --name csnode \
-    --port 6000:600 \
-    --port 9090:9090 \
-    --port 9080:9080 \
+docker run -d \
+    --name credits \
+    --publish 6000:600 \
+    --publish 9090:9090 \
+    --publish 9080:9080 \
     --volume ~/.credits/db:/opt/node/test_db \
     --volume ~/.credits/NodePublic.txt:/opt/node/NodePublic.txt \
     --volume ~/.credits/NodePrivate.txt:/opt/node/NodePrivate.txt \
+    dimitrykislichenko/credits
 ```
