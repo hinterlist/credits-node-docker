@@ -1,6 +1,19 @@
-# Credits node
+**NOTE:** This image use Test-Net v4.1
 
-_NOTE: THIS IMAGE USE TEST-NET v4.1_
+## Quick reference
+
+- **Information about this project:**\
+  [Official website of Credits](https://credits.com/)
+
+- **Where to get help:**\
+  [Official telegram group](https://t.me/creditscom)
+
+- **Source code of this image**\
+  [The source code is available on GitHub](https://github.com/dimitrykislichenko/credits-node-docker)
+
+## What is Credits?
+
+The fastest and most scalable blockchain platform for dApps
 
 ## Setting up account
 
