@@ -17,11 +17,15 @@ RUN apt-get -y install supervisor && \
     mkdir -p /var/log/supervisor && \
     mkdir -p /etc/supervisor/conf.d
 
+# Install curl
+RUN apt-get -y install curl
+
 # Copy supervisor config
 ADD supervisor.conf /etc/supervisor.conf
 
-# Copy node files
-COPY ./node /opt/node
+# Fetch credits node
+ADD ./fetch-node.sh /tmp
+RUN /tmp/fetch-node.sh
 
 # Setup working dir
 WORKDIR /opt/node
