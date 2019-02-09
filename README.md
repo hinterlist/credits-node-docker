@@ -25,7 +25,7 @@ To attach your existing account to node you need to create pair of files:
 After that restart node container if it's already running:
 
 ```
-docker restart csnode
+docker restart credits
 ```
 
 ## Running node
@@ -52,7 +52,7 @@ services:
 
 ```
 docker run -d \
-    --name credits \
+    -name credits \
     --publish 6000:6000 \
     --publish 9090:9090 \
     --publish 9080:9080 \
