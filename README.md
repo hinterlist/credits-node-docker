@@ -53,7 +53,7 @@ services:
 ```
 docker run -d \
     --name credits \
-    --publish 6000:600 \
+    --publish 6000:6000 \
     --publish 9090:9090 \
     --publish 9080:9080 \
     --volume ~/.credits/db:/opt/node/test_db \
