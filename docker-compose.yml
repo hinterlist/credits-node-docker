@@ -1,0 +1,12 @@
+version: "3"
+services:
+  csnode:
+    build: .
+    ports:
+      - "6000:6000"
+      - "9090:9090"
+    container_name: "csnode"
+    volumes:
+      - "~/.credits/db:/opt/node/test_db"
+      - "~/.credits/NodePublic.txt:/opt/node/NodePublic.txt"
+      - "~/.credits/NodePrivate.txt:/opt/node/NodePrivate.txt"
